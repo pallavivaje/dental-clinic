@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.97 0.012 85;
+    --foreground: 0.18 0.04 210;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 210;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 210;
+    --primary: 0.42 0.14 195;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.92 0.04 195;
+    --secondary-foreground: 0.3 0.1 195;
+    --muted: 0.94 0.02 195;
+    --muted-foreground: 0.5 0.05 210;
+    --accent: 0.78 0.12 85;
+    --accent-foreground: 0.18 0.04 210;
+    --destructive: 0.52 0.2 25;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0.02 195;
+    --input: 0.9 0.02 195;
+    --ring: 0.42 0.14 195;
+    --radius: 0.75rem;
+    --chart-1: 0.42 0.14 195;
+    --chart-2: 0.65 0.1 195;
+    --chart-3: 0.78 0.12 85;
+    --chart-4: 0.55 0.18 140;
+    --chart-5: 0.52 0.2 25;
+    --sidebar: 0.18 0.04 210;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 0.42 0.14 195;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.25 0.05 210;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.28 0.04 210;
+    --sidebar-ring: 0.42 0.14 195;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Fraunces", serif;
+  }
+}
+
+@layer utilities {
+  .dental-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.42 0.14 195) 0%,
+      oklch(0.3 0.12 210) 100%
+    );
+  }
+  .dental-card-hover {
+    @apply transition-all duration-300 hover:shadow-dental hover:-translate-y-1;
+  }
+  .nav-link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-dental-teal after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
